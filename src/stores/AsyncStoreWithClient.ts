@@ -24,7 +24,7 @@ import { MatrixDispatcher } from "../dispatcher/dispatcher";
 export abstract class AsyncStoreWithClient<T extends Object> extends AsyncStore<T> {
     protected readyStore: ReadyWatchingStore;
 
-    protected constructor(dispatcher: MatrixDispatcher, initialState: T = <T>{}) {
+    protected constructor(dispatcher: Dispatcher<ActionPayload>, initialState: T = <T>{}) {
         super(dispatcher, initialState);
 
         // Create an anonymous class to avoid code duplication
